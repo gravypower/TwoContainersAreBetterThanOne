@@ -2,8 +2,8 @@
 using System.Web.Mvc;
 using SimpleInjector;
 using SimpleInjector.Diagnostics;
+using TwoContainersAreBetterThanOne.Adapters;
 using TwoContainersAreBetterThanOne.Controllers;
-using TwoContainersAreBetterThanOne.Usecases;
 
 namespace TwoContainersAreBetterThanOne.CompositionRoot
 {
@@ -15,7 +15,7 @@ namespace TwoContainersAreBetterThanOne.CompositionRoot
         {
             _container = new Container();
 
-            _container.RegisterSingleton<ILoggedOnUserUsecase, SitecoreLoggedOnUserUsecase>();
+            _container.RegisterSingleton<ILoggedOnUser, SitecoreLoggedOnUser>();
             RegisterController<HelloController>();
 
 #if DEBUG

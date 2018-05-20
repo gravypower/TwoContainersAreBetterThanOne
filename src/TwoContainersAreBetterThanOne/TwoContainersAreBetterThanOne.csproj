@@ -128,8 +128,8 @@
     <Compile Include="Controllers\HelloController.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Usecases\SitecoreLoggedOnUserUsecase.cs" />
-    <Compile Include="Usecases\ILoggedOnUserUsecase.cs" />
+    <Compile Include="Adapters\SitecoreLoggedOnUser.cs" />
+    <Compile Include="Adapters\ILoggedOnUser.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />

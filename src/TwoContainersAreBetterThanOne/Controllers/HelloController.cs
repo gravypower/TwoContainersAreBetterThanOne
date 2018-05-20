@@ -1,21 +1,21 @@
 ﻿using System.Web.Mvc;
+using TwoContainersAreBetterThanOne.Adapters;
 using TwoContainersAreBetterThanOne.Models;
-using TwoContainersAreBetterThanOne.Usecases;
 
 namespace TwoContainersAreBetterThanOne.Controllers
 {
     public class HelloController : Controller
     {
-        private readonly ILoggedOnUserUsecase _loggedOnUserUsecase;
+        private readonly ILoggedOnUser _loggedOnUser;
 
-        public HelloController(ILoggedOnUserUsecase loggedOnUserUsecase)
+        public HelloController(ILoggedOnUser loggedOnUser)
         {
-            _loggedOnUserUsecase = loggedOnUserUsecase;
+            _loggedOnUser = loggedOnUser;
         }
 
         public ActionResult Index()
         {
-            return View(new User {Name = _loggedOnUserUsecase.Name});
+            return View(new User {Name = _loggedOnUser.Name});
         }
     }
 }
